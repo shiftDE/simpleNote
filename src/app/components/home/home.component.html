@@ -1,0 +1,9 @@
+<app-header></app-header>
+
+<app-signup></app-signup>
+
+<ul>
+  <li *ngFor="let member of showAccounts">
+    {{ member.username + '=========' + member.email }}
+  </li>
+</ul>
