@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { AccountsService } from '../../services/accounts.service';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AccountsService } from 'src/app/services/accounts.service';
 import { IAccount } from 'src/app/interfaces/account';
 
 @Component({
@@ -9,9 +9,9 @@ import { IAccount } from 'src/app/interfaces/account';
 })
 export class SignupComponent implements OnInit {
 
-  @ViewChild('sUsername') signupUsername;
-  @ViewChild('sPassword') signupPassword;
-  @ViewChild('sEmail') signupEmail;
+  @ViewChild('sUsername') signupUsername: ElementRef;
+  @ViewChild('sPassword') signupPassword: ElementRef;
+  @ViewChild('sEmail') signupEmail: ElementRef;
 
 
   constructor(private accountsService: AccountsService) { }
@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
   }
 
   newAccount() {
-    let a: IAccount = {username: this.signupUsername, password: this.signupPassword, email: this.signupEmail};
+    let a: IAccount = {username: this.signupUsername.nativeElement.value, password: this.signupPassword.nativeElement.value, email: this.signupEmail.nativeElement.value};
     this.accountsService.signupAccount(a);
   }
 
