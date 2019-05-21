@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IAccount } from '../interfaces/account';
+import { LoggingService } from './logging.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +14,13 @@ export class AccountsService {
     {username: 'Din', password: '7777', email: 'din@email.com'}
   ];
 
+  constructor(private loggingService: LoggingService) { }
+
+
   signupAccount(newAccountData: IAccount) {
     this.allAccounts.push(newAccountData);
+    this.loggingService.logMessage(newAccountData.username);
   }
 
 
-  constructor() { }
 }
