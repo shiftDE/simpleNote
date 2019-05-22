@@ -1,0 +1,7 @@
+.nav-item a {
+    color: red !important;
+}
+
+.nav-item a.active {
+    color: blue !important;
+}
