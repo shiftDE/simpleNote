@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from '../../../interfaces/user';
 import { ActivatedRoute, Params } from '@angular/router';
+import { IAccount } from 'src/app/interfaces/account';
 
 @Component({
   selector: 'app-edit-user',
@@ -13,17 +13,17 @@ export class EditUserComponent implements OnInit {
 
   constructor(private activeRoute: ActivatedRoute) { }
 
-  usersList: IUser = {id: 0, name: 'Sarah'};
+  usersList: IAccount = {userId: 0, username: 'sarah', password: '2343', email: 'sarah@email.com'};
 
   ngOnInit() {
     console.log(this.activeRoute);
-    this.usersList.id = this.activeRoute.snapshot.params['id'];
-    this.usersList.name = this.activeRoute.snapshot.params['name'];
+    this.usersList.userId = this.activeRoute.snapshot.params['id'];
+    this.usersList.username = this.activeRoute.snapshot.params['name'];
 
     this.activeRoute.params.subscribe(
       (myParams: Params) => {
-        this.usersList.id = myParams['id'];
-        this.usersList.name = myParams['name'];
+        this.usersList.userId = myParams['id'];
+        this.usersList.username = myParams['name'];
       }
     )
   }

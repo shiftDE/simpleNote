@@ -1,12 +1,23 @@
-<p>
-  edit-user works!
-</p>
+<div class="container">
 
-<p>Username: {{ usersList.id }}</p>
-<p>Email: {{ usersList.name }}</p>
+  <br>
 
-<hr>
+  <a routerLink="/signup"><button>SignUp Here</button></a>
 
-<a [routerLink]="['/users', 2, 'Gilb']">Gilb</a>
+  <hr> 
 
-<a routerLink="/signup"><button>SignUp Here</button></a>
+  <div class="list-group">
+
+    <a routerLink="/signup" class="list-group-item list-group-item-action active">
+      {{ usersList.username }}
+    </a>
+
+    <a routerLink="/signup" class="list-group-item list-group-item-action">ID: {{ usersList.userId }}</a>
+  </div>
+
+  <hr>
+
+  <a [routerLink]="['/users', 2, 'Gilb']">Gilb</a>
+
+
+</div>

@@ -9,9 +9,9 @@ import { LoggingService } from './logging.service';
 export class AccountsService {
 
   allAccounts: IAccount[] = [
-    {username: 'Tom', password: '9999', email: 'tom@email.com'},
-    {username: 'Hou', password: '8888', email: 'hou@email.com'},
-    {username: 'Din', password: '7777', email: 'din@email.com'}
+    {userId: 1, username: 'Tom', password: '9999', email: 'tom@email.com'},
+    {userId: 2, username: 'Hou', password: '8888', email: 'hou@email.com'},
+    {userId: 3, username: 'Din', password: '7777', email: 'din@email.com'}
   ];
 
   constructor(private loggingService: LoggingService) { }

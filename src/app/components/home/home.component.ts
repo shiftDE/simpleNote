@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggingService } from 'src/app/services/logging.service';
-import { IAccount } from '../../interfaces/account';
-import { AccountsService } from 'src/app/services/accounts.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,19 +10,17 @@ import { Router } from '@angular/router';
 
 export class HomeComponent implements OnInit {
 
-  constructor(private loggingService: LoggingService, private accountsService: AccountsService, private routering: Router) {}
+  constructor(private loggingService: LoggingService, private routering: Router) {}
 
   printMessage:string = "Print Test Message";
 
-  showAccounts: IAccount[];
-
   ngOnInit() {
     this.loggingService.logMessage(this.printMessage);
-    this.showAccounts = this.accountsService.allAccounts;
 
-    setTimeout(() => {
+/*     setTimeout(() => {
       this.routering.navigate(['/users']);
     }, 5000);
+ */  
   }
 
 }

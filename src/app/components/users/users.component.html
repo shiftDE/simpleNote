@@ -1,1 +1,28 @@
-<button (click)="onClicking()">click</button>
+<div class="container">
+
+    <br>
+
+    <button (click)="onClicking()" type="button" class="btn btn-primary btn-lg btn-block">Add User</button>
+
+    <br>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let member of showAccounts">
+                <th scope="row">{{ member.userId }}</th>
+                <td><a [routerLink]="['/users', member.userId,member.username]">{{ member.username }}</a></td>
+                <td>{{ member.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
